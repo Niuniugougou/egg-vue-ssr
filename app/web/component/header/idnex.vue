@@ -12,7 +12,7 @@
       <div class="container-wp">
         <div class="header-main">
           <div class="logo">
-            <img src="@web/asset/images/logo.png" />
+            <img src="@web/asset/images/tix.png" />
           </div>
           <!-- <div class="search">
             <input type="text" placeholder="输入网址或者相关描述检索" />
@@ -27,19 +27,19 @@
                 <li><a title="学习" href class>学习</a></li>
                 <li><a title="源码" href class>源码</a></li>
                 <li><a title="社区" href class>社区</a></li>
-                <li class="last">
+                <li class="last" @mouseenter="mouseenter" @mouseleave="mouseenter">
                   <span></span>
                   <span></span>
                   <span></span>
-                  <div class="nav-div">
+                  <div class="nav-div" v-show="moreInfoAbled">
                     <nav class="nav">
-                      <div>
+                      <div class="small-nav">
                         <a target="_blank" href="">常见问题</a>
                       </div>
-                      <div>
+                      <div class="small-nav">
                         <a href="">规范</a>
                       </div>
-                      <div>
+                      <div class="small-nav">
                         <a href="">关于我们</a>
                       </div>
                     </nav>
@@ -47,6 +47,10 @@
                 </li>
               </ul>
             </div>
+          </div>
+          <div class="user">
+            <a href="">登录</a>
+            <a href="">注册</a>
           </div>
         </div>
       </div>
@@ -56,9 +60,19 @@
 <script type="text/babel">
 export default {
   components: {},
+  data() {
+    return {
+      moreInfoAbled: false
+    }
+  },
   computed: {},
   hook: {},
-  mounted() {}
+  mounted() {},
+  methods: {
+    mouseenter() {
+      this.moreInfoAbled = !this.moreInfoAbled;
+    }
+  }
 };
 </script>
 <style lang="less" scoped>
@@ -119,17 +133,19 @@ export default {
             li.last {
                 position: relative;
                 margin-top: 18px;
+                margin-left: 20px;
                 cursor: pointer;
                 height: 42px;
+                line-height: 20px;
                 >span {
-                    width: 5px;
-                    height: 5px;
-                    border-radius: 50%;
-                    display: inline-block;
-                    line-height: 60px;
-                    margin-right: 4px;
-                    background-color: #8590a6;
-                    z-index: 102;
+                  width: 4px;
+                  height: 4px;
+                  border-radius: 50%;
+                  display: inline-block;
+                  line-height: 60px;
+                  margin-right: 2px;
+                  background-color: #8590a6;
+                  z-index: 102;
                 }
                 .nav-div {
                     .nav {
@@ -155,10 +171,36 @@ export default {
                         border-bottom-left-radius: 3px;
                         -webkit-box-shadow: 0 1px 7px 0 rgba(0,0,0,.2);
                         box-shadow: 0 1px 7px 0 rgba(0,0,0,.2);
+                        border-radius: 5px;
+                        .small-nav {
+                          padding: 4px 0 4px 10px;
+                          a {
+                            color: black;
+                          }
+                        }
+                        .small-nav:hover {
+                          background: #4bbbfa;
+                          a {
+                            color: #fff;
+                          }
+                        }
                     }
                 }
             }
         }
+    }
+    .user {
+      width: 104px;
+      height: 60px;
+      line-height: 60px;
+      display: block;
+      margin-left: 26%;
+      a {
+        color: #cccccc;
+      }
+      >a:hover {
+        color: #fb3;
+      }
     }
   }
 }

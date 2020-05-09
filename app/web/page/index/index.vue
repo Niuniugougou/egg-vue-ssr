@@ -7,14 +7,15 @@
  * @FilePath: \egg\app\web\page\index\index.vue
  -->
 <template>
-	<layout :description="description" :keywords="keywords" title="标题">
+	<layout :description="description" :keywords="keywords" :title="title">
 		<div class="content-wp clearfix">
-			<div class="content-left">
-				<div class="three-card">
-					<div><a href=""><img src="@web/asset/images/index/1.jpg" alt=""></a></div>
-					<div><a href=""><img src="@web/asset/images/index/2.jpg" alt=""></a></div>
-					<div><a href=""><img src="@web/asset/images/index/3.jpg" alt=""></a></div>
+			<div class="content-left clearfix">
+				<div class="three-card clearfix">
+					<div><a href="" title="后台模板管理"><img src="@web/asset/images/index/1.jpg" alt=""></a></div>
+					<div><a href="" title="web常用开发工具"><img src="@web/asset/images/index/2.jpg" alt=""></a></div>
+					<div><a href="" title="素材合集"><img src="@web/asset/images/index/3.jpg" alt=""></a></div>
 				</div>
+				<AticleList :article="article"></AticleList>
 			</div>
 			<div class="content-right">
 
@@ -23,12 +24,15 @@
 	</layout>
 </template>
 <script type="text/babel">
+import AticleList from './component/articleList';
 export default {
-	components: {},
+	components: {
+		AticleList
+	},
   	computed: {},
   	hook: {},
   	mounted() {
-		
+
 	  }
 };
 </script>
@@ -39,6 +43,23 @@ export default {
 	.content-left {
 		width: 70%;
 		float: left;
+		.three-card {
+			width: 100%;
+			>div {
+				width: 30%;
+				margin: 1%;
+				float: left;
+				>a {
+					display: inline-block;
+					width: 100%;
+					img {
+						width: 100%;
+						height: 100%;
+						border-radius: 5px;
+					}
+				}
+			}
+		}
 	}
 }
 </style>

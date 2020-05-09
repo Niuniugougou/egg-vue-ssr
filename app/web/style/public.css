@@ -13,10 +13,22 @@ input {
     outline: none
 }
 
-.wp {}
-
 ::selection {
     background: #344449;
     color: #fff;
     text-shadow: none;
 }
+/* 清除浮动start */
+.clearfix:before,
+.clearfix:after {
+    display: table;
+    content: " ";
+}
+.clearfix,
+.clearfix:after {
+    clear: both;
+}
+.clearfix{
+    *zoom:1;
+}
+/* 清除浮动end */

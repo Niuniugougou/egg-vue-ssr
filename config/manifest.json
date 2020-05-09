@@ -2,6 +2,9 @@
   "detail/index.js": "/public/js/chunk/detail/index.js",
   "index/index.js": "/public/js/chunk/index/index.js",
   "runtime.js": "/public/js/runtime.js",
+  "img/1.jpg": "/public/img/1.jpg",
+  "img/2.jpg": "/public/img/2.jpg",
+  "img/3.jpg": "/public/img/3.jpg",
   "img/tix.png": "/public/img/tix.png",
   "deps": {
     "detail/index.js": {

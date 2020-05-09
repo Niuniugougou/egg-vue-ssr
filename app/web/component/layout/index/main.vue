@@ -7,16 +7,16 @@
  * @FilePath: \egg\app\web\component\layout\index\main.vue
  -->
 <template>
-  	<div class="wp">
-		<HeaderTop></HeaderTop>
-    	<slot name="main"></slot>
-  	</div>
+  <div class="wp">
+    <HeaderTop></HeaderTop>
+    <slot name="main"></slot>
+  </div>
 </template>
 <script>
-import header from '../../header/idnex'
+import header from "../../header/idnex";
 export default {
-	components:{
-		HeaderTop:header
-	}
+  components: {
+    HeaderTop: header
+  }
 };
 </script>

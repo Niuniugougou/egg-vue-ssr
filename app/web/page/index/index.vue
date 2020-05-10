@@ -7,7 +7,7 @@
  * @FilePath: \egg\app\web\page\index\index.vue
  -->
 <template>
-	<layout :description="description" :keywords="keywords" :title="title">
+	<layout :description="description" :keywords="keywords">
 		<div class="content-wp clearfix">
 			<div class="content-left clearfix">
 				<div class="three-card clearfix">
@@ -15,10 +15,10 @@
 					<div><a href="" title="web常用开发工具"><img src="@web/asset/images/index/2.jpg" alt=""></a></div>
 					<div><a href="" title="素材合集"><img src="@web/asset/images/index/3.jpg" alt=""></a></div>
 				</div>
-				<AticleList :article="article"></AticleList>
+				<AticleList></AticleList>
 			</div>
 			<div class="content-right">
-
+				{{article}}
 			</div>
 		</div>
 	</layout>

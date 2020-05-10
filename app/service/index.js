@@ -14,6 +14,13 @@ class IndexService extends Service {
             total: total[0].total
         };
     }
+    getArtilceList() {
+        return {
+            list:[
+                {summary:'summary',title:"hello",url:'www.baidu.com',total:'20'}
+            ]
+        }
 
+    }
 }
 module.exports = IndexService;

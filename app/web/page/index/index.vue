@@ -11,7 +11,7 @@
 		<div class="content-wp clearfix">
 			<div class="content-left clearfix">
 				<div class="three-card clearfix">
-					<div><a href="" title="后台模板管理"><img src="@web/asset/images/index/1.jpg" alt=""></a></div>
+					<div style="margin-left: 0px;"><a href="" title="后台模板管理"><img src="@web/asset/images/index/1.jpg" alt=""></a></div>
 					<div><a href="" title="web常用开发工具"><img src="@web/asset/images/index/2.jpg" alt=""></a></div>
 					<div><a href="" title="素材合集"><img src="@web/asset/images/index/3.jpg" alt=""></a></div>
 				</div>
@@ -47,7 +47,7 @@ export default {
 			width: 100%;
 			>div {
 				width: 30%;
-				margin: 1%;
+				margin: 11px;
 				float: left;
 				>a {
 					display: inline-block;

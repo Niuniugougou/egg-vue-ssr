@@ -16,8 +16,26 @@ class IndexService extends Service {
     }
     getArtilceList() {
         return {
+            total:'20',
             list:[
-                {summary:'summary',title:"hello",url:'www.baidu.com',total:'20'}
+                {
+                    id:'11011',
+                    title:"一份关于vue-cli3项目常用项配置",
+                    url:'www.baidu.com',
+                    author: 'tix',
+                    date: '2020年4月29日 22:43',
+                    articleType: '前端学习',
+                    imgurl: ''
+                },
+                {
+                    id:'11012',
+                    title:"一份关于vue-cli3项目常用项配置",
+                    url:'www.baidu.com',
+                    author: 'tix',
+                    date: '2020年4月29日 22:43',
+                    articleType: '前端学习',
+                    imgurl: ''
+                }
             ]
         }
 

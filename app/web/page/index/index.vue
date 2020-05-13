@@ -18,22 +18,30 @@
 				<AticleList></AticleList>
 			</div>
 			<div class="content-right">
-				{{article}}
+				<Introduction></Introduction>
+				<JoinUs></JoinUs>
 			</div>
 		</div>
 	</layout>
 </template>
 <script type="text/babel">
 import AticleList from './component/articleList';
+import Introduction from './component/introduction';
+import JoinUs from './component/joinUs';
 export default {
 	components: {
-		AticleList
+		AticleList,
+		Introduction,
+		JoinUs
 	},
-  	computed: {},
-  	hook: {},
-  	mounted() {
+	data() {
+		return {
 
-	  }
+		}
+	},
+	computed: {},
+	hook: {},
+	mounted() {}
 };
 </script>
 <style lang="less" scoped>
@@ -60,6 +68,11 @@ export default {
 				}
 			}
 		}
+	}
+	.content-right {
+		width: 30%;
+		float: right;
+		margin-top: 10px;
 	}
 }
 </style>

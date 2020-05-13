@@ -25,7 +25,8 @@ class IndexService extends Service {
                     author: 'tix',
                     date: '2020年4月29日 22:43',
                     articleType: '前端学习',
-                    imgurl: ''
+                    imgurl: '',
+                    writeType: '原创'
                 },
                 {
                     id:'11012',
@@ -34,7 +35,8 @@ class IndexService extends Service {
                     author: 'tix',
                     date: '2020年4月29日 22:43',
                     articleType: '前端学习',
-                    imgurl: ''
+                    imgurl: '',
+                    writeType: '原创'
                 }
             ]
         }

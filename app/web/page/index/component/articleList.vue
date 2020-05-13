@@ -21,7 +21,7 @@
             </div>
           </div>
           <div class="original">
-            <img src=""/>
+            <span>{{item.writeType}}</span>
           </div>
         </a>
       </article>
@@ -99,6 +99,7 @@ export default {
         width: 100%;
         height: 100%;
         position: relative;
+        overflow: hidden;
         .post-card {
           border-radius: 5px;
           overflow: hidden;
@@ -147,6 +148,22 @@ export default {
         }
         .post-card:hover {
           transform: scale(1.01);
+        }
+        .original {
+          position: absolute;
+          top: 4px;
+          right: -20px;
+          display: inline-block;
+          width: 70px;
+          height: 24px;
+          background: #fb9f73;
+          line-height: 24px;
+          color: #fff;
+          text-align: center;
+          transform: rotate(45deg);
+          >span {
+            font-size: 12px;
+          }
         }
       }
     }

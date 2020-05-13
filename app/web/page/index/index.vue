@@ -20,6 +20,7 @@
 			<div class="content-right">
 				<Introduction></Introduction>
 				<JoinUs></JoinUs>
+				<PersonNumber></PersonNumber>
 			</div>
 		</div>
 	</layout>
@@ -28,11 +29,13 @@
 import AticleList from './component/articleList';
 import Introduction from './component/introduction';
 import JoinUs from './component/joinUs';
+import PersonNumber from './component/personNumber';
 export default {
 	components: {
 		AticleList,
 		Introduction,
-		JoinUs
+		JoinUs,
+		PersonNumber,
 	},
 	data() {
 		return {

@@ -21,6 +21,7 @@
 				<Introduction></Introduction>
 				<JoinUs></JoinUs>
 				<PersonNumber></PersonNumber>
+				<RankList></RankList>
 			</div>
 		</div>
 	</layout>
@@ -30,12 +31,14 @@ import AticleList from './component/articleList';
 import Introduction from './component/introduction';
 import JoinUs from './component/joinUs';
 import PersonNumber from './component/personNumber';
+import RankList from './component/rankList';
 export default {
 	components: {
 		AticleList,
 		Introduction,
 		JoinUs,
 		PersonNumber,
+		RankList,
 	},
 	data() {
 		return {

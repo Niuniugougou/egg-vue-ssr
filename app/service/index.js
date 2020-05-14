@@ -14,9 +14,16 @@ class IndexService extends Service {
             total: total[0].total
         };
     }
-    getArtilceList() {
+    async getArtilceList(limitSize,page) {
+        let { app } = this;
+        const total = await app.mysql.query(`select COUNT(*) as total from tb_article`);
+        // const dataList = await app.mysql.query(`select * from tb_article where id in (select id from tb_article order by id) limit ${limitSize};`);
         return {
-            total:'20',
+            code: 200,
+            status: "success",
+            page,
+            limitSize,
+            total: total[0].total,
             list:[
                 {
                     id:'11011',
@@ -27,19 +34,9 @@ class IndexService extends Service {
                     articleType: '前端学习',
                     imgurl: '',
                     writeType: '原创'
-                },
-                {
-                    id:'11012',
-                    title:"一份关于vue-cli3项目常用项配置",
-                    url:'www.baidu.com',
-                    author: 'tix',
-                    date: '2020年4月29日 22:43',
-                    articleType: '前端学习',
-                    imgurl: '',
-                    writeType: '原创'
                 }
             ]
-        }
+        };
 
     }
 }

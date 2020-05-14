@@ -17,7 +17,10 @@ module.exports = class IndexController extends egg.Controller {
         await this.ctx.render('index/index.js', result);
     }
     async list() {
-        this.ctx.body = this.service.index.getArtilceList();
+        const { ctx } = this;
+        const pageSize = ctx.request.query.pageSize;
+        const pageNum = ctx.request.query.pageIndex;
+        this.ctx.body = await this.service.index.getArtilceList(pageSize,pageNum);
     }
 
 };

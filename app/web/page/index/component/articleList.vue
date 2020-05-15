@@ -8,13 +8,13 @@
           class="item"
         >
           <div class="post-card">
-            <div class="blog-background"><img src="@web/asset/images/index/4.jpg" alt=""></div>
+            <div class="blog-background"><img :src="item.img_url" lazy="loaded" :alt="item.title"></div>
             <div class="post-card-mask">
               <div class="post-card-container">
                 <h2 class="post-card-title">{{item.title}}</h2>
                 <div class="post-card-info">
                   <span>{{item.author}}</span>
-                  <span>{{item.date}}・</span>
+                  <span>{{item.create_time}}・</span>
                   <span>{{item.articleType}}</span>
                 </div>
               </div>
@@ -28,6 +28,9 @@
     </div>
     <div style="text-align:center" v-if="isLoading">
       <img src="@web/asset/images/loading.gif" />
+    </div>
+    <div style="text-align:center">
+
     </div>
   </div>
 </template>
@@ -69,16 +72,28 @@ export default {
         this.pageIndex++;
         setTimeout(() => {
           this.fetch();
-        }, 1500);
+        }, 2000);
       }
-    }
+    },
+
   },
   mounted() {
     this.loadPage();
     window.addEventListener(
       "scroll",
       () => {
-        this.loadPage();
+        //变量scrollTop是滚动条滚动时，距离顶部的距离
+        let scrollTop = document.documentElement.scrollTop||document.body.scrollTop;
+        //变量windowHeight是可视区的高度
+        let windowHeight = document.documentElement.clientHeight || document.body.clientHeight;
+        //变量scrollHeight是滚动条的总高度
+        let scrollHeight = document.documentElement.scrollHeight||document.body.scrollHeight;
+        //滚动条到底部的条件
+        if(scrollTop+windowHeight==scrollHeight){
+            //写后台加载数据的函数
+            this.loadPage();
+            console.log("距顶部"+scrollTop+"可视区高度"+windowHeight+"滚动条总高度"+scrollHeight);
+        }
       },
       false
     );

@@ -15,6 +15,7 @@
 					<div><a href="" title="web常用开发工具"><img src="@web/asset/images/index/2.jpg" alt=""></a></div>
 					<div><a href="" title="素材合集"><img src="@web/asset/images/index/3.jpg" alt=""></a></div>
 				</div>
+				<HotWebSite></HotWebSite>
 				<AticleList></AticleList>
 			</div>
 			<div class="content-right">
@@ -32,6 +33,7 @@ import Introduction from './component/introduction';
 import JoinUs from './component/joinUs';
 import PersonNumber from './component/personNumber';
 import RankList from './component/rankList';
+import HotWebSite from './component/hotWebSite';
 export default {
 	components: {
 		AticleList,
@@ -39,6 +41,7 @@ export default {
 		JoinUs,
 		PersonNumber,
 		RankList,
+		HotWebSite,
 	},
 	data() {
 		return {

@@ -21,7 +21,7 @@
 			<div class="content-right">
 				<Introduction></Introduction>
 				<JoinUs></JoinUs>
-				<PersonNumber></PersonNumber>
+				<!-- <PersonNumber></PersonNumber> -->
 				<RankList></RankList>
 			</div>
 		</div>

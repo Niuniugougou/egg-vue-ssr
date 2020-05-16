@@ -14,5 +14,9 @@ class IndexService extends Service {
             list: dataList
         };
     }
+    async getRankList() {
+        let { app } = this;
+        const ranklist = await app.mysql.query(``);
+    }
 }
 module.exports = IndexService;

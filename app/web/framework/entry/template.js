@@ -10,9 +10,12 @@ import Layout from 'component/layout/index';
 import plugin from 'framework/plugin';
 import pieceCard from 'component/pieceCard.vue';
 import AtComponents from 'at-ui';
+import ElementUI from 'element-ui';
+import 'element-ui/lib/theme-chalk/index.css';
 export default function(Vue) {
     Vue.use(AtComponents)
     Vue.use(plugin);
     Vue.component(Layout.name, Layout);
     Vue.component('pieceCard', pieceCard);
+    Vue.use(ElementUI);
 }

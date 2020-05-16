@@ -8,7 +8,7 @@
           class="item"
         >
           <div class="post-card">
-            <div class="blog-background"><img :src="item.img_url" lazy="loaded" :alt="item.title"></div>
+            <!-- <div class="blog-background"><img src="@web/asset/images/index/4.jpg" lazy="loaded" :alt="item.title"></div> -->
             <div class="post-card-mask">
               <div class="post-card-container">
                 <h2 class="post-card-title">{{item.title}}</h2>
@@ -25,12 +25,20 @@
           </div>
         </a>
       </article>
+      <div style="text-align:center">
+        <el-pagination
+          @size-change="handleSizeChange"
+          @current-change="handleCurrentChange"
+          :current-page="pageIndex"
+          :page-sizes="[100, 200, 300, 400]"
+          :page-size="pageSize"
+          layout="total, sizes, prev, pager, next, jumper"
+          :total="400">
+        </el-pagination>
+      </div>
     </div>
     <div style="text-align:center" v-if="isLoading">
       <img src="@web/asset/images/loading.gif" />
-    </div>
-    <div style="text-align:center">
-
     </div>
   </div>
 </template>
@@ -75,28 +83,33 @@ export default {
         }, 2000);
       }
     },
-
+    handleSizeChange(val) {
+      console.log(`每页 ${val} 条`);
+    },
+    handleCurrentChange(val) {
+      console.log(`当前页: ${val}`);
+    }
   },
   mounted() {
     this.loadPage();
-    window.addEventListener(
-      "scroll",
-      () => {
-        //变量scrollTop是滚动条滚动时，距离顶部的距离
-        let scrollTop = document.documentElement.scrollTop||document.body.scrollTop;
-        //变量windowHeight是可视区的高度
-        let windowHeight = document.documentElement.clientHeight || document.body.clientHeight;
-        //变量scrollHeight是滚动条的总高度
-        let scrollHeight = document.documentElement.scrollHeight||document.body.scrollHeight;
-        //滚动条到底部的条件
-        if(scrollTop+windowHeight==scrollHeight){
-            //写后台加载数据的函数
-            this.loadPage();
-            console.log("距顶部"+scrollTop+"可视区高度"+windowHeight+"滚动条总高度"+scrollHeight);
-        }
-      },
-      false
-    );
+    // window.addEventListener(
+    //   "scroll",
+    //   () => {
+    //     //变量scrollTop是滚动条滚动时，距离顶部的距离
+    //     let scrollTop = document.documentElement.scrollTop||document.body.scrollTop;
+    //     //变量windowHeight是可视区的高度
+    //     let windowHeight = document.documentElement.clientHeight || document.body.clientHeight;
+    //     //变量scrollHeight是滚动条的总高度
+    //     let scrollHeight = document.documentElement.scrollHeight||document.body.scrollHeight;
+    //     //滚动条到底部的条件
+    //     if(scrollTop+windowHeight==scrollHeight){
+    //         //写后台加载数据的函数
+    //         this.loadPage();
+    //         console.log("距顶部"+scrollTop+"可视区高度"+windowHeight+"滚动条总高度"+scrollHeight);
+    //     }
+    //   },
+    //   false
+    // );
   }
 };
 </script>

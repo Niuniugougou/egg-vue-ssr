@@ -22,5 +22,7 @@ module.exports = class IndexController extends egg.Controller {
         const pageNum = ctx.request.query.pageIndex;
         this.ctx.body = await this.service.index.getArtilceList(pageSize,pageNum);
     }
-
+    async rankList() {
+        this.ctx.body = await this.service.index.getRankList();
+    }
 };

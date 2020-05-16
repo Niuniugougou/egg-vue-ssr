@@ -5,7 +5,7 @@ class IndexService extends Service {
         let { app } = this;
         let page_from = (page-1)*limitSize;
         const total = await app.mysql.query(`select COUNT(*) as total from tb_article`);
-        const dataList = await app.mysql.query(`select * from tb_article where id >=(select id from tb_article order by id limit ${page_from},1) limit ${limitSize};`);
+        const dataList = await app.mysql.query(`select * from tb_article where id >=(select id from tb_article order by id limit ${page_from},1) order by create_time desc limit ${limitSize};`);
         return {
             code: 200,
             status: "success",
@@ -17,7 +17,7 @@ class IndexService extends Service {
     }
     async getRankList() {
         let { app } = this;
-        const ranklist = await app.mysql.query(``);
+        const ranklist = await app.mysql.query(`select * from tb_article order by see_num desc limit 0,10`);
     }
 }
 module.exports = IndexService;

@@ -196,9 +196,9 @@ export default {
             }
           }
         }
-        .post-card:hover {
-          // transform: scale(1.00);
-        }
+        // .post-card:hover {
+        //   // transform: scale(1.00);
+        // }
         .original {
           position: absolute;
           top: 4px;
